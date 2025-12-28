@@ -1,0 +1,67 @@
+:root {
+  --background: 10 10 15; /* Deep Space Black */
+  --foreground: 255 255 255;
+  
+  /* Omni Identity Colors */
+  --omni-primary: 0 255 255; /* Cyan (DeepSeek/Science) */
+  --omni-creative: 138 43 226; /* Purple (Gemini/Art) */
+  --omni-logic: 16 185 129; /* Emerald (GPT/Logic) */
+  --omni-human: 249 115 22; /* Orange (Claude/Humanity) */
+  
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(20, 20, 30, 0.6);
+  --glass-shine: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* App-like feel */
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(var(--omni-creative), 0.08) 0%, transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(var(--omni-primary), 0.08) 0%, transparent 25%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, rgb(var(--omni-primary)), rgb(var(--omni-creative)));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
