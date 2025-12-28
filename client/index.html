@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni-Mind - العقل الموحد</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-brain"></i> Omni-Mind</h1>
+            <p class="subtitle">دمج أربعة نماذج ذكاء اصطناعي في عقل واحد</p>
+        </header>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <div class="model-selector">
+                    <h2><i class="fas fa-robot"></i> اختر العقل</h2>
+                    <div class="model-buttons">
+                        <button class="model-btn active" data-model="auto">
+                            <i class="fas fa-magic"></i> التوجيه الذكي
+                        </button>
+                        <button class="model-btn" data-model="deepseek">
+                            <i class="fas fa-code"></i> DeepSeek
+                        </button>
+                        <button class="model-btn" data-model="gemini">
+                            <i class="fab fa-google"></i> Gemini
+                        </button>
+                        <button class="model-btn" data-model="claude">
+                            <i class="fas fa-paint-brush"></i> Claude
+                        </button>
+                        <button class="model-btn" data-model="chatgpt">
+                            <i class="fas fa-comment"></i> ChatGPT
+                        </button>
+                    </div>
+                </div>
+
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h3><i class="fas fa-comments"></i> محادثة Omni-Mind</h3>
+                        <div class="status-indicator">
+                            <span class="status-dot active"></span>
+                            <span>متصل</span>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- الرسائل ستظهر هنا -->
+                    </div>
+                    
+                    <div class="chat-input">
+                        <textarea 
+                            id="userInput" 
+                            placeholder="اكتب استفسارك هنا... (اضغط Ctrl+Enter للإرسال)"
+                            rows="3"
+                        ></textarea>
+                        <button id="sendButton">
+                            <i class="fas fa-paper-plane"></i> إرسال
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-panel">
+                <h2><i class="fas fa-chart-line"></i> حالة النظام</h2>
+                
+                <div class="models-status">
+                    <div class="status-card deepseek">
+                        <h3><i class="fas fa-code"></i> DeepSeek</h3>
+                        <p class="status" id="deepseekStatus">جاري التحقق...</p>
+                    </div>
+                    <div class="status-card gemini">
+                        <h3><i class="fab fa-google"></i> Gemini</h3>
+                        <p class="status" id="geminiStatus">جاري التحقق...</p>
+                    </div>
+                    <div class="status-card claude">
+                        <h3><i class="fas fa-paint-brush"></i> Claude</h3>
+                        <p class="status" id="claudeStatus">جاري التحقق...</p>
+                    </div>
+                    <div class="status-card chatgpt">
+                        <h3><i class="fas fa-comment"></i> ChatGPT</h3>
+                        <p class="status" id="chatgptStatus">جاري التحقق...</p>
+                    </div>
+                </div>
+                
+                <div class="system-info">
+                    <h3><i class="fas fa-info-circle"></i> معلومات النظام</h3>
+                    <div class="info-item">
+                        <span>النموذج النشط:</span>
+                        <span id="activeModel">التوجيه الذكي</span>
+                    </div>
+                    <div class="info-item">
+                        <span>عدد الاستعلامات:</span>
+                        <span id="queryCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Omni-Mind v1.0 - النظام الموحد للذكاء الاصطناعي</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
